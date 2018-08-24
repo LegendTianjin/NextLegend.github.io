@@ -6,7 +6,7 @@
   <link href="/NextLegend.github.io/atom.xml" rel="self"/>
   
   <link href="https://legendtianjin.github.io/NextLegend.github.io/"/>
-  <updated>2018-08-24T09:54:54.959Z</updated>
+  <updated>2018-08-24T13:50:01.292Z</updated>
   <id>https://legendtianjin.github.io/NextLegend.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python之禅</title>
+    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/Python%E4%B9%8B%E7%A6%85/"/>
+    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/Python之禅/</id>
+    <published>2018-08-24T13:47:44.000Z</published>
+    <updated>2018-08-24T13:50:01.292Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>The Zen of Python, by Tim Peters</strong><br>Beautiful is better than ugly.<br>Explicit is better than implicit.<br>Simple is better than complex.<br>Complex is better than complicated.<br>Flat is better than nested.<br>Sparse is better than dense.<br>Readability counts.<br>Special cases aren’t special enough to break the rules.<br>Although practicality beats purity.<br>Errors should never pass silently.<br>Unless explicitly silenced.<br>In the face of ambiguity, refuse the temptation to guess.<br>There should be one– and preferably only one –obvious way to do it.<br>Although that way may not be obvious at first unless you’re Dutch.<br>Now is better than never.<br>Although never is often better than <em>right</em> now.<br>If the implementation is hard to explain, it’s a bad idea.<br>If the implementation is easy to explain, it may be a good idea.<br>Namespaces are one honking great idea – let’s do more of those!</p><p><strong>Tim Peters的Python之禅</strong><br>美丽胜过丑陋。<br>显式优于隐式。<br>简单比复杂更好。<br>复杂比复杂更好。<br>Flat优于嵌套。<br>稀疏优于密集。<br>可读性很重要。<br>特殊情况不足以打破规则。<br>虽然实用性胜过纯洁。<br>错误不应该默默地传递。<br>除非明确沉默。<br>面对模棱两可，拒绝猜测的诱惑。<br>应该有一个 - 最好只有一个 - 显而易见的方法。<br>虽然这种方式起初可能并不明显，除非你是荷兰人。<br>现在总比没有好。<br>虽然现在永远不会比*正确好。<br>如果实施很难解释，那是个坏主意。<br>如果实现很容易解释，那可能是个好主意。<br>命名空间是一个很棒的主意 - 让我们做更多的事情吧！</p>]]></content>
+    
+    <summary type="html">
+    
+      Tim Peters的Python之禅
+    
+    </summary>
+    
+      <category term="Python" scheme="https://legendtianjin.github.io/NextLegend.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://legendtianjin.github.io/NextLegend.github.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>GAN的理解与TensorFlow的实现</title>
