@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://legendtianjin.github.io/NextLegend.github.io/about/index.html</loc>
+    
+    <lastmod>2018-08-24T10:03:39.895Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/%E4%B8%AD%E8%8B%B1%E6%96%87NLP%E9%9B%86%E6%88%90%E5%9E%8B%E5%B7%A5%E5%85%B7%E6%B1%87%E6%80%BB/</loc>
     
     <lastmod>2018-08-24T09:56:08.365Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/GAN%E7%9A%84%E7%90%86%E8%A7%A3%E4%B8%8ETensorFlow%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2018-08-24T09:54:54.959Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://legendtianjin.github.io/NextLegend.github.io/about/index.html</loc>
-    
-    <lastmod>2018-08-24T09:47:53.199Z</lastmod>
     
   </url>
   
