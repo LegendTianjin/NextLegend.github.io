@@ -6,7 +6,7 @@
   <link href="/NextLegend.github.io/atom.xml" rel="self"/>
   
   <link href="https://legendtianjin.github.io/NextLegend.github.io/"/>
-  <updated>2018-08-25T03:35:58.810Z</updated>
+  <updated>2018-09-03T14:29:15.133Z</updated>
   <id>https://legendtianjin.github.io/NextLegend.github.io/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>汉字拼音转换工具_Python版</title>
+    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/09/03/%E6%B1%89%E5%AD%97%E6%8B%BC%E9%9F%B3%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7-Python%E7%89%88/"/>
+    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/09/03/汉字拼音转换工具-Python版/</id>
+    <published>2018-09-03T13:39:48.000Z</published>
+    <updated>2018-09-03T14:29:15.133Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>先附上github的一张图片哈：</strong><br><img src="/NextLegend.github.io/2018/09/03/汉字拼音转换工具-Python版/汉字拼音转换工具_Python版/001.jpg" alt="汉字拼音转换工具_Python版"><br><strong>github地址如下：</strong><br><strong><a href="https://github.com/mozillazg/python-pinyin" target="_blank" rel="noopener">https://github.com/mozillazg/python-pinyin</a></strong></p>]]></content>
+    
+    <summary type="html">
+    
+      小亮今天看到一篇不错的项目，现在和大家分享一下哈！该项目是基于hotoo/pinyin开发。将汉字转为拼音，可以用于汉字注音、排序、检索(Russian translation) 。详情请见下文！
+    
+    </summary>
+    
+      <category term="Python NLP" scheme="https://legendtianjin.github.io/NextLegend.github.io/categories/Python-NLP/"/>
+    
+    
+      <category term="NLP" scheme="https://legendtianjin.github.io/NextLegend.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2018算法工程师秋招集锦</title>
+    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/09/03/2018%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%A7%8B%E6%8B%9B%E9%9B%86%E9%94%A6/"/>
+    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/09/03/2018算法工程师秋招集锦/</id>
+    <published>2018-09-03T11:38:35.000Z</published>
+    <updated>2018-09-03T11:38:35.441Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Learning Pyspark</title>
