@@ -6,7 +6,7 @@
   <link href="/NextLegend.github.io/atom.xml" rel="self"/>
   
   <link href="https://legendtianjin.github.io/NextLegend.github.io/"/>
-  <updated>2018-09-27T12:38:33.519Z</updated>
+  <updated>2018-09-27T12:42:20.068Z</updated>
   <id>https://legendtianjin.github.io/NextLegend.github.io/</id>
   
   <author>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>Machine_Learning_100_days</title>
-    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/09/27/Machine-Learning-100-days/"/>
-    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/09/27/Machine-Learning-100-days/</id>
+    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/09/27/Machine_Learning_100_days/"/>
+    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/09/27/Machine_Learning_100_days/</id>
     <published>2018-09-27T12:20:36.000Z</published>
-    <updated>2018-09-27T12:38:33.519Z</updated>
+    <updated>2018-09-27T12:42:20.068Z</updated>
     
-    <content type="html"><![CDATA[<p><center><font color="black" size="12"><strong>Machine_Learning_100_days</strong></font></center><br>&#160; &#160; &#160; &#160;<strong>小亮接触深度学习也将近一年了，通过走了这么多的路，读论文也好，看视频也好，看书也好，发现还是得通过边敲代码边思考边理解公式这样的方式比较踏实，不然就是天马行空，吹吹牛罢了！你会什么？我会深度学习耶！那你给我写两行代码解决一下这个问题？感知机是什么？交叉熵损失函数是什么？反向转播算法来推导一下？Pandas、Numpy、Scikit-learn这些库用过吗？当面试官或者HR问起这些的时候，我希望小亮或者你们能够胸有成竹的说，这些我都会哈，来我给你手工推导一下交叉熵损失函数是如何影响网络的学习速率的，反向传播算法是根据微积分的链式求导罚则调节参数权重w和偏置b的，这个项目我做过，那个我也知道。。。。。。其实，这个时候这种状态才是小亮应有的状态，希望在2020年毕业的时候，再回到此处时，可以做到无悔于时间、无悔于现在所做的一切与努力。每天进步一点点，来跟着小亮Machine Learning吧！</strong></p><p><img src="/NextLegend.github.io/2018/09/27/Machine-Learning-100-days/Machine_Learning_100_days/1.jpg" alt="Machine_Learning_100_days"><br><img src="/NextLegend.github.io/2018/09/27/Machine-Learning-100-days/Machine_Learning_100_days/2.jpg" alt="Machine_Learning_100_days"></p>]]></content>
+    <content type="html"><![CDATA[<p><center><font color="black" size="12"><strong>Machine_Learning_100_days</strong></font></center><br>&#160; &#160; &#160; &#160;<strong>小亮接触深度学习也将近一年了，通过走了这么多的路，读论文也好，看视频也好，看书也好，发现还是得通过边敲代码边思考边理解公式这样的方式比较踏实，不然就是天马行空，吹吹牛罢了！你会什么？我会深度学习耶！那你给我写两行代码解决一下这个问题？感知机是什么？交叉熵损失函数是什么？反向转播算法来推导一下？Pandas、Numpy、Scikit-learn这些库用过吗？当面试官或者HR问起这些的时候，我希望小亮或者你们能够胸有成竹的说，这些我都会哈，来我给你手工推导一下交叉熵损失函数是如何影响网络的学习速率的，反向传播算法是根据微积分的链式求导罚则调节参数权重w和偏置b的，这个项目我做过，那个我也知道。。。。。。其实，这个时候这种状态才是小亮应有的状态，希望在2020年毕业的时候，再回到此处时，可以做到无悔于时间、无悔于现在所做的一切与努力。每天进步一点点，来跟着小亮Machine Learning吧！</strong><br><img src="/NextLegend.github.io/2018/09/27/Machine_Learning_100_days/Machine-Learning-100-days/Learning_Pyspark.png" alt="Machine_Learning_100_days"><br><img src="/NextLegend.github.io/2018/09/27/Machine_Learning_100_days/Machine-Learning-100-days/1.jpg" alt="Machine_Learning_100_days"><br><img src="/NextLegend.github.io/2018/09/27/Machine_Learning_100_days/Machine-Learning-100-days/2.jpg" alt="Machine_Learning_100_days"></p>]]></content>
     
     <summary type="html">
     
@@ -40,12 +40,12 @@
   
   <entry>
     <title>Machine_Learning_100_days</title>
-    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/09/27/Machine_Learning_100_days/"/>
-    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/09/27/Machine_Learning_100_days/</id>
+    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/09/27/Machine-Learning-100-days/"/>
+    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/09/27/Machine-Learning-100-days/</id>
     <published>2018-09-27T12:20:36.000Z</published>
-    <updated>2018-09-27T12:42:20.068Z</updated>
+    <updated>2018-09-27T12:38:33.519Z</updated>
     
-    <content type="html"><![CDATA[<p><center><font color="black" size="12"><strong>Machine_Learning_100_days</strong></font></center><br>&#160; &#160; &#160; &#160;<strong>小亮接触深度学习也将近一年了，通过走了这么多的路，读论文也好，看视频也好，看书也好，发现还是得通过边敲代码边思考边理解公式这样的方式比较踏实，不然就是天马行空，吹吹牛罢了！你会什么？我会深度学习耶！那你给我写两行代码解决一下这个问题？感知机是什么？交叉熵损失函数是什么？反向转播算法来推导一下？Pandas、Numpy、Scikit-learn这些库用过吗？当面试官或者HR问起这些的时候，我希望小亮或者你们能够胸有成竹的说，这些我都会哈，来我给你手工推导一下交叉熵损失函数是如何影响网络的学习速率的，反向传播算法是根据微积分的链式求导罚则调节参数权重w和偏置b的，这个项目我做过，那个我也知道。。。。。。其实，这个时候这种状态才是小亮应有的状态，希望在2020年毕业的时候，再回到此处时，可以做到无悔于时间、无悔于现在所做的一切与努力。每天进步一点点，来跟着小亮Machine Learning吧！</strong><br><img src="/NextLegend.github.io/2018/09/27/Machine_Learning_100_days/Machine-Learning-100-days/Learning_Pyspark.png" alt="Machine_Learning_100_days"><br><img src="/NextLegend.github.io/2018/09/27/Machine_Learning_100_days/Machine-Learning-100-days/1.jpg" alt="Machine_Learning_100_days"><br><img src="/NextLegend.github.io/2018/09/27/Machine_Learning_100_days/Machine-Learning-100-days/2.jpg" alt="Machine_Learning_100_days"></p>]]></content>
+    <content type="html"><![CDATA[<p><center><font color="black" size="12"><strong>Machine_Learning_100_days</strong></font></center><br>&#160; &#160; &#160; &#160;<strong>小亮接触深度学习也将近一年了，通过走了这么多的路，读论文也好，看视频也好，看书也好，发现还是得通过边敲代码边思考边理解公式这样的方式比较踏实，不然就是天马行空，吹吹牛罢了！你会什么？我会深度学习耶！那你给我写两行代码解决一下这个问题？感知机是什么？交叉熵损失函数是什么？反向转播算法来推导一下？Pandas、Numpy、Scikit-learn这些库用过吗？当面试官或者HR问起这些的时候，我希望小亮或者你们能够胸有成竹的说，这些我都会哈，来我给你手工推导一下交叉熵损失函数是如何影响网络的学习速率的，反向传播算法是根据微积分的链式求导罚则调节参数权重w和偏置b的，这个项目我做过，那个我也知道。。。。。。其实，这个时候这种状态才是小亮应有的状态，希望在2020年毕业的时候，再回到此处时，可以做到无悔于时间、无悔于现在所做的一切与努力。每天进步一点点，来跟着小亮Machine Learning吧！</strong></p><p><img src="/NextLegend.github.io/2018/09/27/Machine-Learning-100-days/Machine_Learning_100_days/1.jpg" alt="Machine_Learning_100_days"><br><img src="/NextLegend.github.io/2018/09/27/Machine-Learning-100-days/Machine_Learning_100_days/2.jpg" alt="Machine_Learning_100_days"></p>]]></content>
     
     <summary type="html">
     
