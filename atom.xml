@@ -6,7 +6,7 @@
   <link href="/NextLegend.github.io/atom.xml" rel="self"/>
   
   <link href="https://legendtianjin.github.io/NextLegend.github.io/"/>
-  <updated>2018-09-27T13:34:40.054Z</updated>
+  <updated>2018-09-28T09:16:56.186Z</updated>
   <id>https://legendtianjin.github.io/NextLegend.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习Day2</title>
+    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/09/28/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0Day2/"/>
+    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/09/28/机器学习Day2/</id>
+    <published>2018-09-28T08:59:44.000Z</published>
+    <updated>2018-09-28T09:16:56.186Z</updated>
+    
+    <content type="html"><![CDATA[<center><font color="black" size="6"><strong>Day2简单线性回归</strong></font></center><br>&#160; &#160; &#160; &#160;<strong>先给大家看一下这一部分的流程哈，主要分为4个Step，如下面这幅图片所示：</strong><br><img src="/NextLegend.github.io/2018/09/28/机器学习Day2/Day2.JPG" alt="机器学习Day2"><br><br>    #coding:utf-8<br>    import pandas as pd<br>    import numpy as np<br>    import matplotlib.pyplot as plt<br>    #Step1:数据预处理<br>    dataset = pd.read_csv(‘studentscores.csv’)<br>    X = dataset.iloc[ : ,   : 1 ].values<br>    Y = dataset.iloc[ : , 1 ].values<br>    from sklearn.model_selection import train_test_split<br>    X_train, X_test, Y_train, Y_test = train_test_split( X, Y, test_size = 1/4, random_state = 0)<br>    #Step2:训练集使用简单线性回归模型来训练<br>    from sklearn.linear_model import LinearRegression<br>    regressor = LinearRegression()<br>    regressor = regressor.fit(X_train, Y_train)<br>    #Step3：预测结果<br>    Y_pred = regressor.predict(X_test)<br>    #Step4:可视化<br>    #训练集结果可视化<br>    plt.scatter(X_train , Y_train, color = ‘red’)<br>    plt.plot(X_train , regressor.predict(X_train), color =’blue’)<br>    plt.show()<br>    #测试集结果可视化<br>    plt.scatter(X_test , Y_test, color = ‘red’)<br>    plt.plot(X_test , regressor.predict(X_test), color =’blue’)<br>    plt.show()<br><br>&#160; &#160; &#160; &#160;<strong>将上面的代码输入到编辑器中，执行，就会得到下面的结果，因为我们调用Matplotlib画图函数，所以我们可以得到可视化之后的结果，如下图所示：。</strong><br><img src="/NextLegend.github.io/2018/09/28/机器学习Day2/figure1.JPG" alt="机器学习Day2"><br><center><strong>训练集结果可视化</strong></center><br><img src="/NextLegend.github.io/2018/09/28/机器学习Day2/figure2.JPG" alt="机器学习Day2"><br><center><strong>测试集结果可视化</strong></center>]]></content>
+    
+    <summary type="html">
+    
+      今天是2018年9月28日，小亮开始了机器学习Day2，今天学习的内容为简单线性回归部分，主要学习根据已有的数据，如何拟合出一条直线，也就是构造出一个函数，能够表示已有数据的分布。Python库会用到Numpy、Pandas、Matplotlib等。
+    
+    </summary>
+    
+      <category term="Machine_Learning Python" scheme="https://legendtianjin.github.io/NextLegend.github.io/categories/Machine-Learning-Python/"/>
+    
+    
+      <category term="机器学习" scheme="https://legendtianjin.github.io/NextLegend.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习Day1</title>
