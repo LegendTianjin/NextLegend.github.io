@@ -6,7 +6,7 @@
   <link href="/NextLegend.github.io/atom.xml" rel="self"/>
   
   <link href="https://legendtianjin.github.io/NextLegend.github.io/"/>
-  <updated>2018-09-28T09:19:25.218Z</updated>
+  <updated>2018-09-29T16:35:20.137Z</updated>
   <id>https://legendtianjin.github.io/NextLegend.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习Day3</title>
+    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/09/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0Day3/"/>
+    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/09/30/机器学习Day3/</id>
+    <published>2018-09-29T16:17:40.000Z</published>
+    <updated>2018-09-29T16:35:20.137Z</updated>
+    
+    <content type="html"><![CDATA[<center><font color="black" size="6"><strong>Day3多元线性回归</strong></font></center><br>&#160; &#160; &#160; &#160;<strong>先给大家看一下这一部分的流程哈，主要分为3个Step，如下面这幅图片所示：</strong><br><img src="/NextLegend.github.io/2018/09/30/机器学习Day3/Day3.png" alt="机器学习Day3"><br>    #coding:utf-8<br>    # 导入库<br>    import pandas as pd<br>    import numpy as np<br><br>    #Step1: 导入数据集<br>    dataset = pd.read_csv(‘50_Startups.csv’)<br>    X = dataset.iloc[ : , :-1].values<br>    Y = dataset.iloc[ : ,  4 ].values<br><br>    # Step2: 将类别数据数字化<br>    from sklearn.preprocessing import LabelEncoder, OneHotEncoder<br>    labelencoder = LabelEncoder()<br>    X[: , 3] = labelencoder.fit_transform(X[ : , 3])<br>    onehotencoder = OneHotEncoder(categorical_features = [3])<br>    X = onehotencoder.fit_transform(X).toarray()<br><br>    #Step3:躲避虚拟变量陷阱<br>    X = X[: , 1:]<br><br>    # 拆分数据集为训练集和测试集<br>    from sklearn.model_selection import train_test_split<br>    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 0)<br><br>    # 第2步： 在训练集上训练多元线性回归模型<br>    from sklearn.linear_model import LinearRegression<br>    regressor = LinearRegression()<br>    regressor.fit(X_train, Y_train)<br><br>    # Step4: 在测试集上预测结果<br>    y_pred = regressor.predict(X_test)<br>    print(y_pred)<br><br><img src="/NextLegend.github.io/2018/09/30/机器学习Day3/result.JPG" alt="机器学习Day3"><br><center><strong>测试集上预测结果</strong></center>]]></content>
+    
+    <summary type="html">
+    
+      今天是2018年9月29日，小亮开始了机器学习Day3，今天学习多元线性内容为多元线回归部分，多元线性回归尝试通过用一个线性方程来适配观测数据，这个线性方程是在两个以上（包括两个）的特征和响应之间构建的一个关系。多元线性回归的实现步骤和简单线性回归很相似，在评价部分有所不同。Python库会用到Numpy、Pandas、Sklearn等。
+    
+    </summary>
+    
+      <category term="Machine_Learning Python" scheme="https://legendtianjin.github.io/NextLegend.github.io/categories/Machine-Learning-Python/"/>
+    
+    
+      <category term="机器学习" scheme="https://legendtianjin.github.io/NextLegend.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习Day2</title>
@@ -413,27 +435,6 @@
       
         &lt;p&gt;大家好，这是我的第一个hexo!&lt;/p&gt;
 
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/hello-world/"/>
-    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/hello-world/</id>
-    <published>2018-08-24T00:48:48.099Z</published>
-    <updated>2018-08-24T07:29:11.776Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
       
     
     </summary>
