@@ -6,7 +6,7 @@
   <link href="/NextLegend.github.io/atom.xml" rel="self"/>
   
   <link href="https://legendtianjin.github.io/NextLegend.github.io/"/>
-  <updated>2018-09-29T16:35:20.137Z</updated>
+  <updated>2018-10-02T02:10:19.191Z</updated>
   <id>https://legendtianjin.github.io/NextLegend.github.io/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2018知识图谱发展报告之小亮见解</title>
+    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/10/02/2018%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E5%8F%91%E5%B1%95%E6%8A%A5%E5%91%8A%E4%B9%8B%E5%B0%8F%E4%BA%AE%E8%A7%81%E8%A7%A3/"/>
+    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/10/02/2018知识图谱发展报告之小亮见解/</id>
+    <published>2018-10-02T02:10:19.000Z</published>
+    <updated>2018-10-02T02:10:19.191Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>机器学习Day3</title>
@@ -416,28 +430,6 @@
     </summary>
     
       <category term="深度学习" scheme="https://legendtianjin.github.io/NextLegend.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>“test”</title>
-    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/%E2%80%9Ctest%E2%80%9D/"/>
-    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/“test”/</id>
-    <published>2018-08-24T01:12:08.000Z</published>
-    <updated>2018-08-24T01:13:31.493Z</updated>
-    
-    <content type="html"><![CDATA[<p>大家好，这是我的第一个hexo!</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;大家好，这是我的第一个hexo!&lt;/p&gt;
-
-      
-    
-    </summary>
     
     
   </entry>
