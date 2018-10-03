@@ -1,0 +1,1080 @@
+<!doctype html>
+ <!-- 页面点击小红心 -->
+ <script type="text/javascript" src="/js/src/love.js"></script>
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/NextLegend.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/NextLegend.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/NextLegend.github.io/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/NextLegend.github.io/atom.xml" title="Next Legend!" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/NextLegend.github.io/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="该教程为基于python+opencv的图像目标区域自动提取，实现自动提取一张照片中的纸张内容">
+<meta name="keywords" content="Love Promise">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于python+opencv的图像目标区域自动提取">
+<meta property="og:url" content="https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/基于python+opencv的图像目标区域自动提取（本项目为提取纸张中的内容）/index.html">
+<meta property="og:site_name" content="Next Legend!">
+<meta property="og:description" content="该教程为基于python+opencv的图像目标区域自动提取，实现自动提取一张照片中的纸张内容">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdn.net/20180812200443662?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180812194831910?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180812195304944?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180812195725900?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-08-24T07:18:06.447Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于python+opencv的图像目标区域自动提取">
+<meta name="twitter:description" content="该教程为基于python+opencv的图像目标区域自动提取，实现自动提取一张照片中的纸张内容">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180812200443662?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/NextLegend.github.io/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+  <link rel="canonical" href="https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/基于python+opencv的图像目标区域自动提取（本项目为提取纸张中的内容）/"/>
+
+
+
+
+
+  <title> 基于python+opencv的图像目标区域自动提取 | Next Legend! </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f2e5400f17b3cf03a0b6c0fc85e89d57";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+	<!--Github-start-->
+	<a href="https://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
+    <!--Github-end-->
+	<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/NextLegend.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Next Legend!</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一天进步一点点</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/NextLegend.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/NextLegend.github.io/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/NextLegend.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/NextLegend.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/NextLegend.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-github">
+          <a href="/NextLegend.github.io/github" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-github"></i> <br />
+            
+            github
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://legendtianjin.github.io/NextLegend.github.io/NextLegend.github.io/2018/08/24/基于python+opencv的图像目标区域自动提取（本项目为提取纸张中的内容）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="赵小亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/NextLegend.github.io/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Next Legend!">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                基于python+opencv的图像目标区域自动提取
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-24T15:17:48+08:00">
+                2018-08-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/NextLegend.github.io/categories/计算机视觉/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机视觉</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/NextLegend.github.io/2018/08/24/基于python+opencv的图像目标区域自动提取（本项目为提取纸张中的内容）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/08/24/基于python+opencv的图像目标区域自动提取（本项目为提取纸张中的内容）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  该教程为基于python+opencv的图像目标区域自动提取，实现自动提取一张照片中的纸张内容
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>要点：<br>该教程为基于python+opencv的图像目标区域自动提取，实现自动提取一张照片中的纸张内容<br>环境配置：<br>Wn10+CPU i7-6700<br>Pycharm2018<br>opencv-python 3.4.2.17<br>numpy 1.14.5<br>笔者信息：Next_Legend QQ:1219154092 人工智能 自然语言处理 图像处理 神经网络<br>                                                ——2018.8.12于天津大学</p>
+<p>该项目的代码在笔者的资源仓库中，代码地址：<br><a href="https://download.csdn.net/download/jinyuan7708/10599212" target="_blank" rel="noopener">基于python+opencv的图像目标区域自动提取</a></p>
+<hr>
+<p>一、项目背景<br>一张照片中的感兴趣区域总是沿着x,y,z三个轴都有一定倾斜（如下图），要想把照片翻转到平行位置，需要进行透视变换，而透视变换需要同一像素点变换前后的坐标。由此可以想到，提取矩形区域四个角的坐标作为变换前的坐标，变换后的坐标可以设为照片的四个角落，经过投影变换，矩形区域将会翻转并充满图像。<br><strong>因此我们要解决的问题变为：提取矩形的四个角落、进行透视变换。</strong><img src="https://img-blog.csdn.net/20180812200443662?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
+<p>二、提取矩形角落坐标<br>矩形的检测主要是提取边缘，图片显示部分的亮度通常高于周围环境，我们可以将图片阈值化，将图片部分与周围环境明显的分别开来，这对后边的边缘检测非常有帮助。<br><strong>检测矩形并提取坐标需要对图像进行预处理、边缘检测、提取轮廓、检测凸包、角点检测。</strong><br>1、预处理转为灰度图<br>由于手机拍摄的照片像素可能会很高，为了加快处理速度，我们首先将图像转化为灰度图<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">image</span> = cv2.imread(Config.src)</span><br><span class="line">gray = cv2.cvtColor(<span class="built_in">image</span>, cv2.COLOR_BGR2GRAY)</span><br><span class="line">srcWidth, srcHeight, channels = <span class="built_in">image</span>.<span class="built_in">shape</span></span><br><span class="line"><span class="built_in">print</span>(srcWidth, srcHeight)</span><br></pre></td></tr></table></figure></p>
+<p>2、中值滤波</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">binary</span> = cv2.medianBlur(gray,<span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+<p>3、转化为二值图像<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ret, <span class="built_in">binary</span> = cv2.threshold(<span class="built_in">binary</span>, Config.threshold_thresh, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">cv2.imwrite(<span class="string">"1-threshold.png"</span>, <span class="built_in">binary</span>, [<span class="built_in">int</span>(cv2.IMWRITE_PNG_COMPRESSION), <span class="number">9</span>])</span><br></pre></td></tr></table></figure></p>
+<p>此时图片已经变成了这个样子：<br><img src="https://img-blog.csdn.net/20180812194831910?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>可见纸张页面部分已经与背景环境分离开来。<br>4、边缘检测与轮廓处理<br>我们用Canny算子边缘检测，提取轮廓</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># canny提取轮廓</span></span><br><span class="line"><span class="built_in">binary</span> = cv2.Canny(<span class="built_in">binary</span>, <span class="number">0</span>, <span class="number">60</span>, apertureSize = <span class="number">3</span>)</span><br><span class="line">cv2.imwrite(<span class="string">"3-canny.png"</span>, <span class="built_in">binary</span>, [<span class="built_in">int</span>(cv2.IMWRITE_PNG_COMPRESSION), <span class="number">9</span>])</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdn.net/20180812195304944?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><strong>提取轮廓后，拟合外接多边形（矩形）</strong></p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 提取轮廓后，拟合外接多边形（矩形）</span></span><br><span class="line"><span class="literal">_</span>,contours,<span class="literal">_</span> = cv2.findContours(binary, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span><br><span class="line">print(<span class="string">"len(contours)=%d"</span>%(len(contours)))</span><br></pre></td></tr></table></figure>
+<p>5、提取面积最大的轮廓并用多边形将轮廓包围</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> idx,c in enumerate(contours):</span><br><span class="line">    <span class="keyword">if</span> len(c) &lt; Config.min_contours:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    epsilon = Config.epsilon_start</span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        approx = cv2.approxPolyDP(c,epsilon,True)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"idx,epsilon,len(approx),len(c)=%d,%d,%d,%d"</span>%(idx,epsilon,len(approx),len(c)))</span><br><span class="line">        <span class="keyword">if</span> (len(approx) &lt; <span class="number">4</span>):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> math.fabs(cv2.contourArea(approx)) &gt; Config.min_area:</span><br><span class="line">            <span class="keyword">if</span> (len(approx) &gt; <span class="number">4</span>):</span><br><span class="line">                epsilon += Config.epsilon_step</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">"epsilon=%d, count=%d"</span>%(epsilon,len(approx)))</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                #<span class="keyword">for</span> p in approx:</span><br><span class="line">                #    cv2.circle(<span class="built_in">binary</span>,(p[<span class="number">0</span>][<span class="number">0</span>],p[<span class="number">0</span>][<span class="number">1</span>]),<span class="number">8</span>,(<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>),thickness=<span class="number">-1</span>)</span><br><span class="line">                approx = approx.reshape((<span class="number">4</span>, <span class="number">2</span>))</span><br><span class="line">                # 点重排序, [top-left, top-right, bottom-right, bottom-left]</span><br><span class="line">                src_rect = order_points(approx)</span><br><span class="line"></span><br><span class="line">                cv2.drawContours(<span class="built_in">image</span>, c, <span class="number">-1</span>, (<span class="number">0</span>,<span class="number">255</span>,<span class="number">255</span>),<span class="number">1</span>)</span><br><span class="line">                cv2.<span class="built_in">line</span>(<span class="built_in">image</span>, (src_rect[<span class="number">0</span>][<span class="number">0</span>],src_rect[<span class="number">0</span>][<span class="number">1</span>]),(src_rect[<span class="number">1</span>][<span class="number">0</span>],src_rect[<span class="number">1</span>][<span class="number">1</span>]),<span class="built_in">color</span>=(<span class="number">100</span>,<span class="number">255</span>,<span class="number">100</span>))</span><br><span class="line">                cv2.<span class="built_in">line</span>(<span class="built_in">image</span>, (src_rect[<span class="number">2</span>][<span class="number">0</span>],src_rect[<span class="number">2</span>][<span class="number">1</span>]),(src_rect[<span class="number">1</span>][<span class="number">0</span>],src_rect[<span class="number">1</span>][<span class="number">1</span>]),<span class="built_in">color</span>=(<span class="number">100</span>,<span class="number">255</span>,<span class="number">100</span>))</span><br><span class="line">                cv2.<span class="built_in">line</span>(<span class="built_in">image</span>, (src_rect[<span class="number">2</span>][<span class="number">0</span>],src_rect[<span class="number">2</span>][<span class="number">1</span>]),(src_rect[<span class="number">3</span>][<span class="number">0</span>],src_rect[<span class="number">3</span>][<span class="number">1</span>]),<span class="built_in">color</span>=(<span class="number">100</span>,<span class="number">255</span>,<span class="number">100</span>))</span><br><span class="line">                cv2.<span class="built_in">line</span>(<span class="built_in">image</span>, (src_rect[<span class="number">0</span>][<span class="number">0</span>],src_rect[<span class="number">0</span>][<span class="number">1</span>]),(src_rect[<span class="number">3</span>][<span class="number">0</span>],src_rect[<span class="number">3</span>][<span class="number">1</span>]),<span class="built_in">color</span>=(<span class="number">100</span>,<span class="number">255</span>,<span class="number">100</span>))</span><br><span class="line"></span><br><span class="line">                # 获取最小矩形包络</span><br><span class="line">                <span class="built_in">rect</span> = cv2.minAreaRect(approx)</span><br><span class="line">                # <span class="built_in">rect</span> = cv2.maxAreaRect(approx)</span><br><span class="line">                <span class="built_in">box</span> = cv2.boxPoints(<span class="built_in">rect</span>)</span><br><span class="line">                <span class="built_in">box</span> = np.int0(<span class="built_in">box</span>)</span><br><span class="line">                <span class="built_in">box</span> = <span class="built_in">box</span>.reshape(<span class="number">4</span>,<span class="number">2</span>)</span><br><span class="line">                <span class="built_in">box</span> = order_points(<span class="built_in">box</span>)</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">"approx-&gt;box"</span>)</span><br><span class="line">                <span class="built_in">print</span>(approx)</span><br><span class="line">                <span class="built_in">print</span>(src_rect)</span><br><span class="line">                <span class="built_in">print</span>(<span class="built_in">box</span>)</span><br><span class="line">                w,h = point_distance(<span class="built_in">box</span>[<span class="number">0</span>],<span class="built_in">box</span>[<span class="number">1</span>]), \</span><br><span class="line">                      point_distance(<span class="built_in">box</span>[<span class="number">1</span>],<span class="built_in">box</span>[<span class="number">2</span>])</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">"w,h=%d,%d"</span>%(w,h))</span><br></pre></td></tr></table></figure>
+<p>6、 透视变换</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">dst_rect = np.array([</span><br><span class="line">                    [<span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                    [w - <span class="number">1</span>, <span class="number">0</span>],</span><br><span class="line">                    [w - <span class="number">1</span>, h - <span class="number">1</span>],</span><br><span class="line">                    [<span class="number">0</span>, h - <span class="number">1</span>]],</span><br><span class="line">                    dtype=<span class="string">"float32"</span>)</span><br><span class="line">                M = cv2.getPerspectiveTransform(src_rect, dst_rect)</span><br><span class="line">                warped = cv2.warpPerspective(image, M, (w, h))</span><br><span class="line">                cv2.imwrite(<span class="string">"transfer%d.png"</span>%idx, warped, [int(cv2.IMWRITE_PNG_COMPRESSION), <span class="number">9</span>])</span><br><span class="line">                break</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdn.net/20180812195725900?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>总结<br>本项目利用了照片背景亮度较高的特点，通过二值化突出轮廓提取坐标，进行透视变换。但是局限性在于，如果矩形的亮度与背景相差不大，就很难用这种方法检测到轮廓还需要算法优化。该项目的代码在笔者的资源仓库中，代码地址：<br><a href="https://download.csdn.net/download/jinyuan7708/10599212" target="_blank" rel="noopener">基于python+opencv的图像目标区域自动提取</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>您的支持就是小亮不懈的动力，每天进步一点点，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://pfyt3465l.bkt.clouddn.com/weixin.png" alt="赵小亮 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://pfyt3465l.bkt.clouddn.com/zhifubao.jpg" alt="赵小亮 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/NextLegend.github.io/2018/08/24/基于Keras的attention实战/" rel="next" title="基于Kears的Attention实战">
+                <i class="fa fa-chevron-left"></i> 基于Kears的Attention实战
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/NextLegend.github.io/2018/08/24/算法_NLP_深度学习_机器学习面试笔记/" rel="prev" title="算法_NLP_深度学习_机器学习面试笔记">
+                算法_NLP_深度学习_机器学习面试笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/08/24/基于python+opencv的图像目标区域自动提取（本项目为提取纸张中的内容）/"
+           data-title="基于python+opencv的图像目标区域自动提取" data-url="https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/基于python+opencv的图像目标区域自动提取（本项目为提取纸张中的内容）/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/NextLegend.github.io/uploads/avatar.jpg"
+               alt="赵小亮" />
+          <p class="site-author-name" itemprop="name">赵小亮</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录生活点点滴滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/NextLegend.github.io/archives/">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/NextLegend.github.io/categories/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/NextLegend.github.io/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/NextLegend.github.io/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LegendTianjin/NextLegend.github.io || github" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://blog.csdn.net/jinyuan7708" target="_blank" title="csdn">
+                  
+                    <i class="fa fa-fw fa-crosshairs"></i>
+                  
+                  csdn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://mail.163.com/ || envelope" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  E-Mail
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.google.com.hk/ || google" target="_blank" title="Google">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Google
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/yi-ke-id/activities || ioxhost" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-ioxhost"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.jianshu.com/u/447fdef5fb8f || heartbeat" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-heartbeat"></i>
+                  
+                  简书
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">赵小亮</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共17.8k字</span>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  <script type="text/javascript" src="/NextLegend.github.io/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/NextLegend.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/NextLegend.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/NextLegend.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/NextLegend.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/NextLegend.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/NextLegend.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/NextLegend.github.io/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/NextLegend.github.io/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/NextLegend.github.io/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/NextLegend.github.io/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/NextLegend.github.io/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/NextLegend.github.io/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/NextLegend.github.io/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"imwillxue"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/NextLegend.github.io/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/NextLegend.github.io/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/NextLegend.github.io/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/NextLegend.github.io/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/NextLegend.github.io/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+ 
+</body>
+</html>
+ 
