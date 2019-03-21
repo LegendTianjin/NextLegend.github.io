@@ -6,7 +6,7 @@
   <link href="/NextLegend.github.io/atom.xml" rel="self"/>
   
   <link href="https://legendtianjin.github.io/NextLegend.github.io/"/>
-  <updated>2018-12-15T04:48:09.116Z</updated>
+  <updated>2019-03-21T12:20:40.507Z</updated>
   <id>https://legendtianjin.github.io/NextLegend.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019花开不败</title>
+    <link href="https://legendtianjin.github.io/NextLegend.github.io/2019/03/21/2019%E4%BC%9A%E6%9B%B4%E5%A5%BD/"/>
+    <id>https://legendtianjin.github.io/NextLegend.github.io/2019/03/21/2019会更好/</id>
+    <published>2019-03-21T12:11:45.000Z</published>
+    <updated>2019-03-21T12:20:40.507Z</updated>
+    
+    <content type="html"><![CDATA[<p><center><font color="black" size="6"><strong>2019花开不败</strong></font></center><br>&#160; &#160; &#160; &#160;<strong></strong><br><img src="/NextLegend.github.io/2019/03/21/2019会更好/001.jpg" alt="2019会更好"><br><img src="/NextLegend.github.io/2019/03/21/2019会更好/002.jpg" alt="2019会更好"><br><img src="/NextLegend.github.io/2019/03/21/2019会更好/003.jpg" alt="2019会更好"></p><h2 id=""><a href="#" class="headerlink" title=""></a><img src="/NextLegend.github.io/2019/03/21/2019会更好/004.jpg" alt="2019会更好"></h2>]]></content>
+    
+    <summary type="html">
+    
+      今天是2019年3月21号，距离小亮上次发文已经过去一年了，在这一年里，发生了很多事情，最重要的是小亮没有坚持写作，没有坚持分享，没有坚持敲代码，罪过罪过。这是2019年的第一篇博客，小亮在这里立一个flag,以后每周更新三篇博客，不能断！！！坚持九个月，看看这一年自己的收获！！！不逼自己一把，真的是不知道坚持的力量和魅力。This is for you! I promise!
+    
+    </summary>
+    
+    
+      <category term="具体生活" scheme="https://legendtianjin.github.io/NextLegend.github.io/tags/%E5%85%B7%E4%BD%93%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>最近的一些思考</title>
@@ -421,28 +441,6 @@
     
     
       <category term="Tensorflow" scheme="https://legendtianjin.github.io/NextLegend.github.io/tags/Tensorflow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中英文NLP集成型工具汇总</title>
-    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/%E4%B8%AD%E8%8B%B1%E6%96%87NLP%E9%9B%86%E6%88%90%E5%9E%8B%E5%B7%A5%E5%85%B7%E6%B1%87%E6%80%BB/"/>
-    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/中英文NLP集成型工具汇总/</id>
-    <published>2018-08-24T07:22:48.000Z</published>
-    <updated>2018-08-24T09:56:08.365Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>该文档简单总结了一下集成的中英文NLP工具，分享给NLP领域的大家！</strong><br>笔者信息：Next_Legend QQ:1219154092 机器学习 自然语言处理 计算机视觉 深度学习<br>——2018.8.19于天津大学</p><hr><p><strong>1、面向研究的StanfordNLP(Java) (CoreNLP/Parder/POS Tager/NER…) <a href="https://nlp.stanford.edu/software/index.shtml" target="_blank" rel="noopener">网页链接</a></strong><br><img src="https://img-blog.csdn.net/20180819205836357?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><strong>2、面向应用的SpaCy(Python) <a href="https://spacy.io/" target="_blank" rel="noopener">网页链接</a></strong><br><img src="https://img-blog.csdn.net/20180819205650448?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><strong>3、哈工大语言技术平台LTP(C++) <a href="https://github.com/HIT-SCIR/ltp" target="_blank" rel="noopener">网页链接</a></strong><br><img src="https://img-blog.csdn.net/20180819205956673?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><strong>4、本土的HanLP(Java) <a href="http://hanlp.hankcs.com/?sentence=%E6%88%91%E7%88%B1%E4%BD%A0%E4%B8%AD%E5%9B%BD%EF%BC%8C%E6%88%91%E5%9C%A8%E5%A4%A9%E6%B4%A5%E5%A4%A7%E5%AD%A6%EF%BC%8C%E6%88%91%E7%88%B1%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E3%80%82" target="_blank" rel="noopener">网页链接</a></strong><br><img src="https://img-blog.csdn.net/2018081921031468?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><strong>5、轻量非主流的xmnlp(Python) <a href="https://github.com/SeanLee97/xmnlp" target="_blank" rel="noopener">网页链接</a></strong><br><img src="https://img-blog.csdn.net/20180819210436793?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><strong>6、相对零散的THUNLP开放项目 <a href="https://github.com/thunlp" target="_blank" rel="noopener">网页链接</a></strong><br><img src="https://img-blog.csdn.net/20180819210536217?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><strong>7、复旦大学NLP <a href="http://nlp.fudan.edu.cn/" target="_blank" rel="noopener">网页链接</a></strong><br><img src="https://img-blog.csdn.net/20180819210840388?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><strong>8、清华大学NLP <a href="http://thulac.thunlp.org/" target="_blank" rel="noopener">网页链接</a></strong><br><img src="https://img-blog.csdn.net/20180819211018822?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><strong>9、TEXTBLOG <a href="https://textblob.readthedocs.io/en/dev/" target="_blank" rel="noopener">网页链接</a></strong><br><img src="https://img-blog.csdn.net/20180819211200578?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><strong>10、PyNLPIR <a href="https://pypi.org/project/PyNLPIR/" target="_blank" rel="noopener">网页链接</a></strong><br><img src="https://img-blog.csdn.net/20180819211324571?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><strong>11、Polyglot <a href="https://polyglotclub.com/" target="_blank" rel="noopener">网页链接</a></strong><br><img src="https://img-blog.csdn.net/2018081921152564?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><strong>12、NLTK <a href="http://www.nltk.org/" target="_blank" rel="noopener">网页链接</a></strong><br><img src="https://img-blog.csdn.net/20180819211652437?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><strong>其他的NLP工具小编暂时没有了解，欢迎有使用经验的同学朋友补充！ </strong></p>]]></content>
-    
-    <summary type="html">
-    
-      该文档简单总结了一下集成的中英文NLP工具，分享给NLP领域的大家！
-    
-    </summary>
-    
-      <category term="NLP" scheme="https://legendtianjin.github.io/NextLegend.github.io/categories/NLP/"/>
-    
-    
-      <category term="自然语言处理" scheme="https://legendtianjin.github.io/NextLegend.github.io/tags/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
