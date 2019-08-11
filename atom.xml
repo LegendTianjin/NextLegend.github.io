@@ -6,7 +6,7 @@
   <link href="/NextLegend.github.io/atom.xml" rel="self"/>
   
   <link href="https://legendtianjin.github.io/NextLegend.github.io/"/>
-  <updated>2019-03-21T12:20:40.507Z</updated>
+  <updated>2019-08-11T15:13:38.433Z</updated>
   <id>https://legendtianjin.github.io/NextLegend.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020我们会更好</title>
+    <link href="https://legendtianjin.github.io/NextLegend.github.io/2019/08/11/2020%E6%88%91%E4%BB%AC%E4%BC%9A%E6%9B%B4%E5%A5%BD/"/>
+    <id>https://legendtianjin.github.io/NextLegend.github.io/2019/08/11/2020我们会更好/</id>
+    <published>2019-08-11T15:13:01.000Z</published>
+    <updated>2019-08-11T15:13:38.433Z</updated>
+    
+    <content type="html"><![CDATA[<p><center><font color="black" size="6"><strong>2018</strong></font></center><br>&#160; &#160; &#160; &#160;<strong>先给大家看一下这一部分的流程哈，主要分为3个Step，如下面这幅图片所示：</strong><br><img src="/NextLegend.github.io/2019/08/11/2020我们会更好/机器学习Day3/Day3.png" alt="机器学习Day3"></p>]]></content>
+    
+    <summary type="html">
+    
+      2020我们会更好
+    
+    </summary>
+    
+    
+      <category term="2020我们会更好" scheme="https://legendtianjin.github.io/NextLegend.github.io/tags/2020%E6%88%91%E4%BB%AC%E4%BC%9A%E6%9B%B4%E5%A5%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>2019花开不败</title>
@@ -412,28 +432,6 @@
     <summary type="html">
     
       该教程前面主要讲解GAN网络的一些概念，后面会基于tensorflow实战，欢迎大家分享学习！
-    
-    </summary>
-    
-      <category term="Tensorflow实战深度学习" scheme="https://legendtianjin.github.io/NextLegend.github.io/categories/Tensorflow%E5%AE%9E%E6%88%98%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Tensorflow" scheme="https://legendtianjin.github.io/NextLegend.github.io/tags/Tensorflow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于深度学习tensorflow实现文本分类任务的注意力机制</title>
-    <link href="https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/Tensorflow%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8ERNN%E7%9A%84%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB%E4%BB%BB%E5%8A%A1%E7%9A%84%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
-    <id>https://legendtianjin.github.io/NextLegend.github.io/2018/08/24/Tensorflow实现基于RNN的文本分类任务的注意力机制/</id>
-    <published>2018-08-24T07:23:48.000Z</published>
-    <updated>2018-08-24T09:55:23.841Z</updated>
-    
-    <content type="html"><![CDATA[<p>要点：<br>该教程为深度学习tensorflow实现文本分类任务的注意力机制，实现可视化注意力文本。<br>环境配置：<br>Wn10+CPU i7-6700<br>Pycharm2018<br>Tensorflow 1.8.0<br>Tensorboard 1.8.0<br>笔者信息：Next_Legend  QQ:1219154092 人工智能 自然语言处理 图像处理 神经网络<br>                                                                                                 ——2018.8.8于天津大学</p><hr><p>一、下载代码<br>   该代码见笔者的资源下载部分<a href="https://download.csdn.net/download/jinyuan7708/10592063" target="_blank" rel="noopener">https://download.csdn.net/download/jinyuan7708/10592063</a><br>   代码不需要改动，只需要配置好环境和安装好相应的库，就可以训练和测试了。<br>二、相应的库文件<br>   tensorflow    1.8.0<br>   tensorboard  1.8.0<br>   numpy<br>   keras<br>   tqdm<br>三、工程目录文件<br>  <img src="https://img-blog.csdn.net/20180808222357233?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="工程目录文件"><br>  该项目主要包括attention.py       train.py     utils.py    visualize.py四个文件夹<br>  其中train.py文件是训练模型的文件，运行后会生成model.data-00000-of-00001、model.index、model.meta以及checkpoint文件，也就是训练生成的模型文件。<br>四、核心代码<br><img src="https://img-blog.csdn.net/20180808222935934?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br><img src="https://img-blog.csdn.net/20180808222945807?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br><img src="https://img-blog.csdn.net/20180808222954987?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br><strong>train.py文件代码</strong></p><php><pre><code>from __future__ import print_function, divisionimport numpy as npimport tensorflow as tffrom keras.datasets import imdbfrom tensorflow.contrib.rnn import GRUCellfrom tensorflow.python.ops.rnn import bidirectional_dynamic_rnn as bi_rnnfrom tqdm import tqdmfrom attention import attentionfrom utils import get_vocabulary_size, fit_in_vocabulary, zero_pad, batch_generatorNUM_WORDS = 10000INDEX_FROM = 3SEQUENCE_LENGTH = 250EMBEDDING_DIM = 100HIDDEN_SIZE = 150ATTENTION_SIZE = 50KEEP_PROB = 0.8BATCH_SIZE = 256NUM_EPOCHS = 3  # Model easily overfits without pre-trained words embeddings, that&apos;s why train for a few epochsDELTA = 0.5MODEL_PATH = &apos;./model&apos;# Load the data set(X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=NUM_WORDS, index_from=INDEX_FROM)# Sequences pre-processingvocabulary_size = get_vocabulary_size(X_train)X_test = fit_in_vocabulary(X_test, vocabulary_size)X_train = zero_pad(X_train, SEQUENCE_LENGTH)X_test = zero_pad(X_test, SEQUENCE_LENGTH)# Different placeholderswith tf.name_scope(&apos;Inputs&apos;):batch_ph = tf.placeholder(tf.int32, [None, SEQUENCE_LENGTH], name=&apos;batch_ph&apos;)target_ph = tf.placeholder(tf.float32, [None], name=&apos;target_ph&apos;)seq_len_ph = tf.placeholder(tf.int32, [None], name=&apos;seq_len_ph&apos;)keep_prob_ph = tf.placeholder(tf.float32, name=&apos;keep_prob_ph&apos;)# Embedding layerwith tf.name_scope(&apos;Embedding_layer&apos;):embeddings_var = tf.Variable(tf.random_uniform([vocabulary_size, EMBEDDING_DIM], -1.0, 1.0), trainable=True)tf.summary.histogram(&apos;embeddings_var&apos;, embeddings_var)batch_embedded = tf.nn.embedding_lookup(embeddings_var, batch_ph)# (Bi-)RNN layer(-s)rnn_outputs, _ = bi_rnn(GRUCell(HIDDEN_SIZE), GRUCell(HIDDEN_SIZE),                    inputs=batch_embedded, sequence_length=seq_len_ph, dtype=tf.float32)tf.summary.histogram(&apos;RNN_outputs&apos;, rnn_outputs)# Attention layerwith tf.name_scope(&apos;Attention_layer&apos;):attention_output, alphas = attention(rnn_outputs, ATTENTION_SIZE, return_alphas=True)tf.summary.histogram(&apos;alphas&apos;, alphas)# Dropoutdrop = tf.nn.dropout(attention_output, keep_prob_ph)# Fully connected layerwith tf.name_scope(&apos;Fully_connected_layer&apos;):W = tf.Variable(tf.truncated_normal([HIDDEN_SIZE * 2, 1], stddev=0.1))  # Hidden size is multiplied by 2 for Bi-RNNb = tf.Variable(tf.constant(0., shape=[1]))y_hat = tf.nn.xw_plus_b(drop, W, b)y_hat = tf.squeeze(y_hat)tf.summary.histogram(&apos;W&apos;, W)with tf.name_scope(&apos;Metrics&apos;):    # Cross-entropy loss and optimizer initialization    loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=y_hat, labels=target_ph))    tf.summary.scalar(&apos;loss&apos;, loss) optimizer = tf.train.AdamOptimizer(learning_rate=1e-3).minimize(loss)# Accuracy metricaccuracy = tf.reduce_mean(tf.cast(tf.equal(tf.round(tf.sigmoid(y_hat)), target_ph), tf.float32))tf.summary.scalar(&apos;accuracy&apos;, accuracy)merged = tf.summary.merge_all()train_batch_generator = batch_generator(X_train, y_train, BATCH_SIZE)test_batch_generator = batch_generator(X_test, y_test, BATCH_SIZE)train_writer = tf.summary.FileWriter(&apos;./logdir/train&apos;, accuracy.graph)test_writer = tf.summary.FileWriter(&apos;./logdir/test&apos;, accuracy.graph)session_conf = tf.ConfigProto(gpu_options=tf.GPUOptions(allow_growth=True))saver = tf.train.Saver()if __name__ == &quot;__main__&quot;:with tf.Session(config=session_conf) as sess:    sess.run(tf.global_variables_initializer())    print(&quot;Start learning...&quot;)    for epoch in range(NUM_EPOCHS):        loss_train = 0        loss_test = 0        accuracy_train = 0        accuracy_test = 0        print(&quot;epoch: {}\t&quot;.format(epoch), end=&quot;&quot;)        # Training        num_batches = X_train.shape[0] // BATCH_SIZE        for b in tqdm(range(num_batches)):            x_batch, y_batch = next(train_batch_generator)            seq_len = np.array([list(x).index(0) + 1 for x in x_batch])  # actual lengths of sequences            loss_tr, acc, _, summary = sess.run([loss, accuracy, optimizer, merged],                                                feed_dict={batch_ph: x_batch,                                                           target_ph: y_batch,                                                           seq_len_ph: seq_len,                                                           keep_prob_ph: KEEP_PROB})            accuracy_train += acc            loss_train = loss_tr * DELTA + loss_train * (1 - DELTA)            train_writer.add_summary(summary, b + num_batches * epoch)        accuracy_train /= num_batches        # Testing        num_batches = X_test.shape[0] // BATCH_SIZE        for b in tqdm(range(num_batches)):            x_batch, y_batch = next(test_batch_generator)            seq_len = np.array([list(x).index(0) + 1 for x in x_batch])  # actual lengths of sequences            loss_test_batch, acc, summary = sess.run([loss, accuracy, merged],                                                     feed_dict={batch_ph: x_batch,                                                                target_ph: y_batch,                                                                seq_len_ph: seq_len,                                                                keep_prob_ph: 1.0})            accuracy_test += acc            loss_test += loss_test_batch            test_writer.add_summary(summary, b + num_batches * epoch)        accuracy_test /= num_batches        loss_test /= num_batches        print(&quot;loss: {:.3f}, val_loss: {:.3f}, acc: {:.3f}, val_acc: {:.3f}&quot;.format(            loss_train, loss_test, accuracy_train, accuracy_test        ))    train_writer.close()    test_writer.close()    saver.save(sess, MODEL_PATH)    print(&quot;Run &apos;tensorboard --logdir=./logdir&apos; to checkout tensorboard logs.&quot;)</code></pre><p></p></php><br>五、训练过程<br>   <img src="https://img-blog.csdn.net/20180808224427275?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br>   笔者由于使用的 CPU来进行训练，所以速度比较慢，感兴趣的朋友可以考虑使用GPU来计算，可以大大减少训练模型的时间。如果不会搭建gpu环境的小伙伴可以参考我的另一篇Tensorflow gpu环境搭建 ，附上地址哈：<br>   <a href="https://blog.csdn.net/jinyuan7708/article/details/79642924" target="_blank" rel="noopener">https://blog.csdn.net/jinyuan7708/article/details/79642924</a><br>六、训练结果<br>  <img src="https://img-blog.csdn.net/20180808224902778?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="训练生成的model文件"><br>七、Tensorboard可视化<br><img src="https://img-blog.csdn.net/20180808225017120?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="accuracy"><br><img src="https://img-blog.csdn.net/20180808225026854?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="loss"><br><img src="https://img-blog.csdn.net/20180808225040674?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="计算图"><br>八、visualization可视化结果<br>得到模型后，再继续执行visualize.py文件，生成结果可视化。如下图：<br><img src="https://img-blog.csdn.net/20180808225248673?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppbnl1YW43NzA4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br>至此，我们的教程就结束啦，代码等文件我上传到我的blog下载资源部分，欢迎大家下载批评指正哈!<br>代码地址：<a href="https://download.csdn.net/download/jinyuan7708/10592063" target="_blank" rel="noopener">https://download.csdn.net/download/jinyuan7708/10592063</a><p></p>]]></content>
-    
-    <summary type="html">
-    
-      该教程为深度学习tensorflow实现文本分类任务的注意力机制，实现可视化注意力文本。
     
     </summary>
     
